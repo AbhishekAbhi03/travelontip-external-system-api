@@ -6,11 +6,11 @@
 http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd
 http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
 	<sub-flow name="travelonTip-schedules-implSub_FlowSub_Flow" doc:id="f86b803b-b387-421a-b33b-fa6a8d9fc0a6" >
-		<logger level="INFO" doc:name="start logger" doc:id="66d079bc-8620-48e8-845a-b08b2a35efba" message="calling database for travelontip schedules info started"/>
+		<logger level="INFO" doc:name="start logger" doc:id="66d079bc-8620-48e8-845a-b08b2a35efba" message='#["calling database for travelontip schedules info started"]'/>
 		<db:select doc:name="Select" doc:id="73a47c9b-7037-48b4-8c0b-7f720fb085c2" config-ref="Database_Configs">
 			<db:sql ><![CDATA[SELECT * FROM schedules WHERE companyname = 'TravelOnTip';]]></db:sql>
 		</db:select>
-		<logger level="INFO" doc:name="end logger" doc:id="3815c4d6-7bc6-49fd-b1ac-e76c220453d7" message="response received from db for travelontip schedules "/>
+		<logger level="INFO" doc:name="end logger" doc:id="3815c4d6-7bc6-49fd-b1ac-e76c220453d7" message='#["response received from db for travelontip schedules"]'/>
 		<ee:transform doc:name="Transform Message" doc:id="9810c871-d37b-4777-aa38-a256002493ad" >
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
