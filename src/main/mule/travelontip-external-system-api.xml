@@ -12,7 +12,7 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 			<ee:message >
 			</ee:message>
 			<ee:variables >
-				<ee:set-variable variableName="serviceType" ><![CDATA[attributes.queryParams.serviceType]]></ee:set-variable>
+				<ee:set-variable variableName="serviceType" ><![CDATA[attributes.uriParams.serviceType]]></ee:set-variable>
 				<ee:set-variable variableName="transactionId" ><![CDATA[attributes.headers.transactionId]]></ee:set-variable>
 			</ee:variables>
 		</ee:transform>
